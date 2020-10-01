@@ -11,7 +11,15 @@ exports.min = function min(array) {
 };
 
 exports.max = function max(array) {
-  return 0;
+  if (
+    typeof array === "undefined" ||
+    array === null ||
+    array.length === null ||
+    array.length < 1
+  )
+    return 0;
+  const qSort = new QuickSort();
+  return qSort.sort(array, 0, array.length - 1)[array.length - 1];
 };
 
 exports.avg = function avg(array) {
